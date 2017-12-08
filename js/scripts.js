@@ -1,4 +1,8 @@
 $( document ).ready(function() {
+	
+	
+	
+	
     $('[data-toggle="tab"]').tooltip();
 	$(".cont2").hide();
 	$(".loadingbtn").hide();
@@ -23,8 +27,7 @@ $( document ).ready(function() {
 		$(".botnext1").hide();
 		$(".botback").hide();
 		$(".loadingbtn").show();
-		$( "#buyer-tab" ).removeClass( "active" );
-		
+		$( "#buyer-tab" ).removeClass( "active" );		
 		setTimeout(testing, 1000);
 	});
 	
@@ -44,6 +47,7 @@ $( document ).ready(function() {
 		$(".cont2").hide();
 		$(".loadingbtn").hide();
 		$( ".cont3" ).removeClass( "divoff" );
+		$(".map_canvas").hide();
 	}
 	
 	
@@ -55,6 +59,34 @@ $( document ).ready(function() {
 		$(".loadingbtn").hide();
 		$( ".cont4" ).removeClass( "divoff" );
 	}
+	
+	$("#e1").select2({
+	  maximumSelectionLength: 20,
+		placeholder: "Post code(s) or suburbs of your interest"
+	});
+	
+	$("#e2").select2({
+	  maximumSelectionLength: 20,
+		placeholder: "Post code(s) or suburbs of your interest"
+	});
+	
+	
+	$("#goal25").on('keyup', function() {
+        var words = this.value.match(/\S+/g).length;
+        if (words > 25) {
+            // Split the string on first 200 words and rejoin on spaces
+            var trimmed = $(this).val().split(/\s+/, 25).join(" ");
+            // Add a space at the end to keep new typing making new words
+            $(this).val(trimmed + " ");
+        }
+        else {
+            $('#display_count').text(words);
+            $('#word_left').text(25-words);
+        }
+    });
+	
+	$("#goal25").val("");
+	
 	
 	
 });
