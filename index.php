@@ -13,9 +13,6 @@
 	<div class="map_canvas" style=" position: absolute; top: 0; bottom:110px; left:0; right:0; height: calc(100% - 60px)"></div>
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-light topmenu" style="color: #DFC6AD; background:rgba(3,22,53,0.75) !important;">
-	
-	
-	
     <div class="col text-left">
 		<div style="width: 156px; height: 52px; background-image: url(images/logo.png);"></div>
     
